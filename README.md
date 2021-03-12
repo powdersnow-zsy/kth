@@ -1,3 +1,4 @@
+中文 | [English](https://github.com/powdersnow-zsy/kth/blob/main/README_EN.MD)
 # 简介
 
 mysql到hdfs的实时同步工具，
