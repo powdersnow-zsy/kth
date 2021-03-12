@@ -13,7 +13,7 @@ mysql到hdfs的实时同步工具，
 
 # 架构
 
-<https://github.com/powdersnow-zsy/kth/blob/main/4.png>
+![](https://github.com/powdersnow-zsy/kth/blob/main/4.png)
 
 - kth消费来自kafka的mysql binlog数据，该数据由canal格式化成json后发送给kafka
 - kth将数据格式化成hdfs文件的一行，并且添加时间戳，写入hdfs
@@ -23,9 +23,9 @@ mysql到hdfs的实时同步工具，
 
 1、修改![](https://github.com/powdersnow-zsy/kth/blob/main/1.png)配置
 
-2、修改<https://github.com/powdersnow-zsy/kth/blob/main/2.png>配置文件
+2、修改![](https://github.com/powdersnow-zsy/kth/blob/main/2.png)配置文件
 
-3、添加hive-site.xml https://github.com/powdersnow-zsy/kth/blob/main/3.png
+3、添加hive-site.xml ![](https://github.com/powdersnow-zsy/kth/blob/main/3.png)
 
 打包：mvn clean install
 
