@@ -1,3 +1,5 @@
+[![License](https://camo.githubusercontent.com/266dbf1c12e7e7f112914eb37138734857bde343e4fca6e01dfeb40553cf209a/68747470733a2f2f696d672e736869656c64732e696f2f62616467652f6c6963656e73652d417061636865253230322d3445423142412e737667)](https://www.apache.org/licenses/LICENSE-2.0.html)
+
 English | [Chinese](https://github.com/powdersnow-zsy/kth/blob/main/README.MD)
 # Introduction
 
