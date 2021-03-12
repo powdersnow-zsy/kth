@@ -22,12 +22,15 @@ Consume the mysql binlog data sent by canal to kafka, write it to hdfs and conve
 # Quick Start
 
 1、Modify configuration conf-env.properties
+
 ![](https://github.com/powdersnow-zsy/kth/blob/main/1.png)
 
 2、Modify configuration config-env.yml
+
 ![](https://github.com/powdersnow-zsy/kth/blob/main/2.png)
 
 3、Add hive--env-site.xml 
+
 ![](https://github.com/powdersnow-zsy/kth/blob/main/3.png)
 
 4、Configure the reloadConf.properties file according to the specified format：
