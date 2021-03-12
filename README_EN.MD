@@ -1,3 +1,4 @@
+English|[Chinese](https://github.com/powdersnow-zsy/kth/edit/main/README.MD)
 # Introduction
 
 Real-time synchronization tool from mysql to hdfs,
