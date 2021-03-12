@@ -1,0 +1,38 @@
+on:
+  port: 8081
+  address: 0.0.0.0
+app:
+  contextPath: ''
+  home: /
+gui:
+  search: false
+  navbar: true
+  fluid: true
+  cdn: false
+  menu: {}
+jdbc:
+  driver: com.mysql.jdbc.Driver
+  url: jdbc:mysql://192.168.1.1:3306/db?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=false&serverTimezone=UTC&autoReconnect=true&rewriteBatchedStatements=TRUE
+  username: user
+  password: password
+  options: logger=Slf4JLogger
+  poolProvider: c3p0
+  
+hibernate:
+  dialect: org.hibernate.dialect.MySQL5Dialect
+  format_sql: true
+  show_sql: true
+  connection:
+    release_mode: after_transaction
+
+c3p0:
+  acquireIncrement: 3 
+  initialPoolSize: 3 
+  idleConnectionTestPeriod: 30 
+  minPoolSize: 2 
+  maxPoolSize: 15
+  maxStatements: 100 
+  numHelperThreads: 10 
+  maxIdleTime: 60
+  unreturnedConnectionTimeout: 120
+  debugUnreturnedConnectionStackTraces: true

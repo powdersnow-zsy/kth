@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE log4j2:configuration>
+<!-- log4j2 配置文件 -->
+<configuration name="log4j2Conf" status="WARN" monitorInterval="60">
+	<properties>  
+		<property name="log.path" value="./logs" />
+		<property name="log.encoding" value="UTF-8" />
+		<property name="log.level" value="INFO" />
+		<property name="appName" value="kth" />
+	</properties> 
+
+	<Appenders>
+		<!-- 默认 Appender -->
+		<RollingFile name="DEFAULT-APPENDER" fileName="${log.path}/default.log"
+			filePattern="${log.path}/default-%d{yyyy-MM-dd}.log-%i.log.gz">
+			<PatternLayout charset="${log.encoding}" pattern="%d %-5p %c{2} - %m %X{TimeKey}%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+				<SizeBasedTriggeringPolicy size="80 MB" />
+			</Policies>
+			<DefaultRolloverStrategy>
+				<Delete basePath="${log.path}" maxDepth="1">
+					<IfFileName glob="default-*.log" />
+					<IfLastModified age="7d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingFile>
+
+		<!-- 异常日志 Appender -->
+		<RollingFile name="SYS-ERROR-APPENDER" fileName="${log.path}/error.log"
+			filePattern="${log.path}/error-%d{yyyy-MM-dd}.log-%i.log.gz">
+			<PatternLayout charset="${log.encoding}" pattern="%d %-5p %c{2} - %m %X{TimeKey}%n" />
+			<ThresholdFilter level="ERROR" onMatch="ACCEPT" onMismatch="DENY"/>
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+				<SizeBasedTriggeringPolicy size="80 MB" />
+			</Policies>
+			<DefaultRolloverStrategy>
+				<Delete basePath="${log.path}" maxDepth="1">
+					<IfFileName glob="error-*.log" />
+					<IfLastModified age="7d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingFile>
+		
+		<!-- 服务 Appender -->
+		<RollingFile name="SYS-BIZ-SERVICE-APPENDER" fileName="${log.path}/service.log"
+			filePattern="${log.path}/service-%d{yyyy-MM-dd}.log-%i.log.gz">
+			<PatternLayout charset="${log.encoding}" pattern="%d %-5p %c{2} - %m %X{TimeKey}%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+				<SizeBasedTriggeringPolicy size="80 MB" />
+			</Policies>
+			<DefaultRolloverStrategy>
+				<Delete basePath="${log.path}" maxDepth="1">
+					<IfFileName glob="service-*.log" />
+					<IfLastModified age="7d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingFile>
+
+		<!-- DAL Appender -->
+		<RollingFile name="DAL-APPENDER" fileName="${log.path}/dal.log"
+			filePattern="${log.path}/dal-%d{yyyy-MM-dd}.log-%i.log.gz">
+			<PatternLayout charset="${log.encoding}" pattern="%d %-5p %c{2} - %m %X{TimeKey}%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+				<SizeBasedTriggeringPolicy size="80 MB" />
+			</Policies>
+			<DefaultRolloverStrategy>
+				<Delete basePath="${log.path}" maxDepth="1">
+					<IfFileName glob="dal-*.log" />
+					<IfLastModified age="7d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingFile>
+
+		<!-- 定时任务  Appender -->
+		<RollingFile name="SYS-BIZ-TASK-APPENDER" fileName="${log.path}/task.log"
+			filePattern="${log.path}/task-%d{yyyy-MM-dd}.log-%i.log.gz">
+			<PatternLayout charset="${log.encoding}" pattern="%d %-5p %c{2} - %m %X{TimeKey}%n" />
+			<Policies>
+				<TimeBasedTriggeringPolicy modulate="true" interval="1" />
+				<SizeBasedTriggeringPolicy size="80 MB" />
+			</Policies>
+			<DefaultRolloverStrategy>
+				<Delete basePath="${log.path}" maxDepth="1">
+					<IfFileName glob="task-*.log" />
+					<IfLastModified age="7d" />
+				</Delete>
+			</DefaultRolloverStrategy>
+		</RollingFile>
+	</Appenders>
+
+	<Loggers>
+		<Root level="${log.level}">
+			<appender-ref ref="DEFAULT-APPENDER" />
+			<appender-ref ref="SYS-ERROR-APPENDER" />
+		</Root>
+	</Loggers>
+</configuration>
