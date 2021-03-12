@@ -21,7 +21,7 @@ mysql到hdfs的实时同步工具，
 
 # 快速开始
 
-1、修改<https://github.com/powdersnow-zsy/kth/blob/main/1.png>配置
+1、修改![](https://github.com/powdersnow-zsy/kth/blob/main/1.png)配置
 
 2、修改<https://github.com/powdersnow-zsy/kth/blob/main/2.png>配置文件
 
