@@ -49,7 +49,7 @@ topics={"topics":[{"tables":[{"db":"db1","tableName":"t1"},{"db":"db2","tableNam
 
 6、启动：nohup bash bin/start.sh profiles=production &
 
-# 问题交流反馈
+# 联系方式
 
 QQ：346224832
 
