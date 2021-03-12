@@ -26,12 +26,46 @@ mysql到hdfs的实时同步工具，
 2、修改![](https://github.com/powdersnow-zsy/kth/blob/main/2.png)配置文件
 
 3、添加hive-site.xml ![](https://github.com/powdersnow-zsy/kth/blob/main/3.png)
+4、按照指定格式配置reloadConf.properties文件：
+topics={"topics":[{"tables":[{"db":"db1","tableName":"t1"},{"db":"db2","tableName":"t2"},{"db":"db3","tableName":"t3"}],"topicName":"topic1"},{"tables":[{"db":"db4","tableName":"t4"}],"topicName":"topic2"}]}
+此配置项必须压缩。
+展开的json：
+{
+  "topics": [
+    {
+      "tables": [
+        {
+          "db": "db1",
+          "tableName": "t1"
+        },
+        {
+          "db": "db2",
+          "tableName": "t2"
+        },
+        {
+          "db": "db3",
+          "tableName": "t3"
+        }
+      ],
+      "topicName": "topic1"
+    },
+    {
+      "tables": [
+        {
+          "db": "db4",
+          "tableName": "t4"
+        }
+      ],
+      "topicName": "topic2"
+    }
+  ]
+}
 
-打包：mvn clean install
+5、打包：mvn clean install
 
 将./target/kth上传到服务器
 
-启动：nohup bash bin/start.sh profiles=production &
+6、启动：nohup bash bin/start.sh profiles=production &
 
 # 问题交流反馈
 
